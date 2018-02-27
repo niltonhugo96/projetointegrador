@@ -1,0 +1,22 @@
+.visual{
+	float: left;
+	width: 350px;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 5px;
+	background-color: #696969;
+	text-align: center;
+	color:#5CACEE;
+	font-family: 'Oleo Script', cursive;
+}
+
+.visual img{
+	width: 100px;
+	height: 80px;
+}
+
+.texto{
+	text-align: center;
+	color:#5CACEE;
+	font-family: 'Oleo Script', cursive;
+}
