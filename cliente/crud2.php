@@ -33,7 +33,7 @@ if(isset($_POST['save']))
 if(isset($_GET['del']))
 {
 	$SQL = $MySQLiconn->query("DELETE FROM cliente WHERE idcliente=".$_GET['del']);
-	header("Location: index2.php");
+	header("Location: cliente.php");
 }
 /* code for TIME delete */
 
@@ -57,7 +57,7 @@ if(isset($_POST['update']))
 												,endereco='".$_POST['endereco']."'
 												,complemento='".$_POST['complemento']."'
 												WHERE id=".$_GET['edit']);
-	header("Location: index2.php");
+	header("Location: cliente.php");
 }
 /* code for TIME update */
 
