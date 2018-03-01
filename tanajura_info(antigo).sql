@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Mar-2018 às 19:34
+-- Generation Time: 11-Fev-2018 às 22:53
 -- Versão do servidor: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -71,6 +71,16 @@ INSERT INTO `funcionario` (`idfuncionario`, `nome`, `senha`, `cpf`, `regiao_idre
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `item_ordem`
+--
+
+CREATE TABLE `item_ordem` (
+  `iditem_ordem` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `marca`
 --
 
@@ -87,6 +97,16 @@ CREATE TABLE `marca` (
 INSERT INTO `marca` (`idmarca`, `nome`, `site`) VALUES
 (1, 'Samsung', 'https://www.samsung.com.br'),
 (2, 'LG', 'https://www.lg.com.br');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ordem_servico`
+--
+
+CREATE TABLE `ordem_servico` (
+  `idordem_servico` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -117,7 +137,6 @@ INSERT INTO `produtos` (`idprodutos`, `nome`, `foto`, `valor`, `marca_idmarca`, 
 --
 
 CREATE TABLE `produtos_has_vendas` (
-  `iditem` int(11) NOT NULL,
   `produtos_idprodutos` int(11) NOT NULL,
   `vendas_idvendas` int(11) NOT NULL,
   `quantidade` decimal(10,0) NOT NULL
@@ -127,9 +146,9 @@ CREATE TABLE `produtos_has_vendas` (
 -- Extraindo dados da tabela `produtos_has_vendas`
 --
 
-INSERT INTO `produtos_has_vendas` (`iditem`, `produtos_idprodutos`, `vendas_idvendas`, `quantidade`) VALUES
-(1, 1, 3, '1'),
-(2, 1, 4, '2');
+INSERT INTO `produtos_has_vendas` (`produtos_idprodutos`, `vendas_idvendas`, `quantidade`) VALUES
+(1, 3, '1'),
+(1, 4, '2');
 
 -- --------------------------------------------------------
 
@@ -149,6 +168,19 @@ CREATE TABLE `regiao` (
 INSERT INTO `regiao` (`idregiao`, `nome`) VALUES
 (1, 'Rio de Janeiro'),
 (2, 'Duque de Caxias');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `servico`
+--
+
+CREATE TABLE `servico` (
+  `idservico` int(11) NOT NULL,
+  `tipo` varchar(45) DEFAULT NULL,
+  `valor` varchar(45) DEFAULT NULL,
+  `regiao` varchar(45) DEFAULT NULL COMMENT 'Região de atendimento'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -188,10 +220,22 @@ ALTER TABLE `funcionario`
   ADD KEY `fk_funcionario_regiao1_idx` (`regiao_idregiao`);
 
 --
+-- Indexes for table `item_ordem`
+--
+ALTER TABLE `item_ordem`
+  ADD PRIMARY KEY (`iditem_ordem`);
+
+--
 -- Indexes for table `marca`
 --
 ALTER TABLE `marca`
   ADD PRIMARY KEY (`idmarca`);
+
+--
+-- Indexes for table `ordem_servico`
+--
+ALTER TABLE `ordem_servico`
+  ADD PRIMARY KEY (`idordem_servico`);
 
 --
 -- Indexes for table `produtos`
@@ -204,7 +248,7 @@ ALTER TABLE `produtos`
 -- Indexes for table `produtos_has_vendas`
 --
 ALTER TABLE `produtos_has_vendas`
-  ADD PRIMARY KEY (`iditem`,`produtos_idprodutos`,`vendas_idvendas`),
+  ADD PRIMARY KEY (`produtos_idprodutos`,`vendas_idvendas`),
   ADD KEY `fk_produtos_has_vendas_vendas1_idx` (`vendas_idvendas`),
   ADD KEY `fk_produtos_has_vendas_produtos1_idx` (`produtos_idprodutos`);
 
@@ -213,6 +257,12 @@ ALTER TABLE `produtos_has_vendas`
 --
 ALTER TABLE `regiao`
   ADD PRIMARY KEY (`idregiao`);
+
+--
+-- Indexes for table `servico`
+--
+ALTER TABLE `servico`
+  ADD PRIMARY KEY (`idservico`);
 
 --
 -- Indexes for table `vendas`
@@ -238,10 +288,22 @@ ALTER TABLE `funcionario`
   MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `item_ordem`
+--
+ALTER TABLE `item_ordem`
+  MODIFY `iditem_ordem` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `marca`
 --
 ALTER TABLE `marca`
   MODIFY `idmarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `ordem_servico`
+--
+ALTER TABLE `ordem_servico`
+  MODIFY `idordem_servico` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `produtos`
@@ -250,16 +312,16 @@ ALTER TABLE `produtos`
   MODIFY `idprodutos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `produtos_has_vendas`
---
-ALTER TABLE `produtos_has_vendas`
-  MODIFY `iditem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `regiao`
 --
 ALTER TABLE `regiao`
   MODIFY `idregiao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `servico`
+--
+ALTER TABLE `servico`
+  MODIFY `idservico` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `vendas`
