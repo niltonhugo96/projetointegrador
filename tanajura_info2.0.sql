@@ -1,20 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
--- http://www.phpmyadmin.net
+-- version 4.7.7
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Fev-2018 às 01:14
--- Versão do servidor: 5.6.16
--- PHP Version: 5.5.9
+-- Generation Time: 01-Mar-2018 às 19:34
+-- Versão do servidor: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `tanajura_info`
@@ -26,24 +28,23 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `cliente`
 --
 
-CREATE TABLE IF NOT EXISTS `cliente` (
-  `idcliente` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cliente` (
+  `idcliente` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `telefone` varchar(45) NOT NULL,
   `email` varchar(45) DEFAULT NULL,
   `senha` varchar(32) NOT NULL,
   `cep` decimal(10,0) NOT NULL,
   `endereco` varchar(45) DEFAULT NULL,
-  `complemento` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idcliente`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `complemento` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `cliente`
 --
 
 INSERT INTO `cliente` (`idcliente`, `nome`, `telefone`, `email`, `senha`, `cep`, `endereco`, `complemento`) VALUES
-(1, 'Pedro argulino', '(21)44546996', 'Pedraoaoao@hotmail.com', '774774', '21250190', 'Rua pereira batista', 'NÂ°: 7');
+(1, 'pessoa', '55+0(21)44550044', 'pessoa@gmail.com', '7a68f09bd992671bb3b19a5e70b7827e', '11220555', 'av. piracicaba', 'numero 10');
 
 -- --------------------------------------------------------
 
@@ -51,42 +52,21 @@ INSERT INTO `cliente` (`idcliente`, `nome`, `telefone`, `email`, `senha`, `cep`,
 -- Estrutura da tabela `funcionario`
 --
 
-CREATE TABLE IF NOT EXISTS `funcionario` (
-  `idfuncionario` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `funcionario` (
+  `idfuncionario` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `senha` varchar(32) NOT NULL,
   `cpf` varchar(45) NOT NULL,
-  `regiao_idregiao` int(11) NOT NULL,
-  PRIMARY KEY (`idfuncionario`),
-  KEY `fk_funcionario_regiao1_idx` (`regiao_idregiao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+  `regiao_idregiao` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `funcionario`
 --
 
 INSERT INTO `funcionario` (`idfuncionario`, `nome`, `senha`, `cpf`, `regiao_idregiao`) VALUES
-(3, 'marcos', '698dc19d489c4e4db73e28a713eab07b', '12365478998', 1),
-(6, 'Flamengoa', 'poste', '987456321', 1),
-(7, 'Flamengoa', 'poste', '987456321', 4),
-(12, 'Flamengoa 23', '6565655', '76767676', 5),
-(13, 'fabricio', '000000000000999999999', '6656563737373', 8),
-(14, 'felipe', '78787878', '42424242', 2);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `item_ordem`
---
-
-CREATE TABLE IF NOT EXISTS `item_ordem` (
-  `iditem_ordem` int(11) NOT NULL AUTO_INCREMENT,
-  `servico_idservico` int(11) NOT NULL,
-  `ordem_servico_idordem_servico` int(11) NOT NULL,
-  PRIMARY KEY (`iditem_ordem`),
-  KEY `fk_item_ordem_servico1_idx` (`servico_idservico`),
-  KEY `fk_item_ordem_ordem_servico1_idx` (`ordem_servico_idordem_servico`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+(1, 'jurandi', '698dc19d489c4e4db73e28a713eab07b', '12345698798', 1),
+(2, 'budomiro', 'e959088c6049f1104c84c9bde5560a13', '98765432121', 2);
 
 -- --------------------------------------------------------
 
@@ -94,34 +74,19 @@ CREATE TABLE IF NOT EXISTS `item_ordem` (
 -- Estrutura da tabela `marca`
 --
 
-CREATE TABLE IF NOT EXISTS `marca` (
-  `idmarca` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `marca` (
+  `idmarca` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
-  `site` varchar(300) DEFAULT NULL COMMENT 'Site da marca',
-  PRIMARY KEY (`idmarca`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `site` varchar(300) DEFAULT NULL COMMENT 'Site da marca'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `marca`
 --
 
 INSERT INTO `marca` (`idmarca`, `nome`, `site`) VALUES
-(2, 'Phillips', 'https://www.philips.com.br/');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `ordem_servico`
---
-
-CREATE TABLE IF NOT EXISTS `ordem_servico` (
-  `idordem_servico` int(11) NOT NULL AUTO_INCREMENT,
-  `cliente_idcliente` int(11) NOT NULL,
-  `funcionario_idfuncionario` int(11) NOT NULL,
-  PRIMARY KEY (`idordem_servico`),
-  KEY `fk_ordem_servico_cliente1_idx` (`cliente_idcliente`),
-  KEY `fk_ordem_servico_funcionario1_idx` (`funcionario_idfuncionario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+(1, 'Samsung', 'https://www.samsung.com.br'),
+(2, 'LG', 'https://www.lg.com.br');
 
 -- --------------------------------------------------------
 
@@ -129,23 +94,21 @@ CREATE TABLE IF NOT EXISTS `ordem_servico` (
 -- Estrutura da tabela `produtos`
 --
 
-CREATE TABLE IF NOT EXISTS `produtos` (
-  `idprodutos` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `produtos` (
+  `idprodutos` int(11) NOT NULL,
   `nome` varchar(300) NOT NULL,
   `foto` varchar(300) DEFAULT NULL,
   `valor` varchar(45) NOT NULL,
   `marca_idmarca` int(11) NOT NULL,
-  `modelo` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idprodutos`),
-  KEY `fk_produtos_marca_idx` (`marca_idmarca`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `modelo` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
 INSERT INTO `produtos` (`idprodutos`, `nome`, `foto`, `valor`, `marca_idmarca`, `modelo`) VALUES
-(1, 'tv', 'https://a-static.mlcdn.com.br/618x463/smart-tv-led-32-samsung-un32j4300-conversor-digital-wi-fi-2-hdmi-1-usb/magazineluiza/193365700/19991cfaea3d86d85500c691ebf0146b.jpg', 'R$ 1999,99', 2, 'un32j4300');
+(1, 'Notebook Intel Core i5 12GB RAM 1TB HD 15.6', 'https://br-store.acer.com/Assets/Produtos/SuperZoom/ES1-572-5959.jpg', 'R$ 2.599 ,00', 2, 'ES1-572-5959');
 
 -- --------------------------------------------------------
 
@@ -153,15 +116,20 @@ INSERT INTO `produtos` (`idprodutos`, `nome`, `foto`, `valor`, `marca_idmarca`, 
 -- Estrutura da tabela `produtos_has_vendas`
 --
 
-CREATE TABLE IF NOT EXISTS `produtos_has_vendas` (
-  `iditem` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `produtos_has_vendas` (
+  `iditem` int(11) NOT NULL,
   `produtos_idprodutos` int(11) NOT NULL,
   `vendas_idvendas` int(11) NOT NULL,
-  `quantidade` decimal(10,0) NOT NULL,
-  PRIMARY KEY (`iditem`,`produtos_idprodutos`,`vendas_idvendas`),
-  KEY `fk_produtos_has_vendas_vendas1_idx` (`vendas_idvendas`),
-  KEY `fk_produtos_has_vendas_produtos1_idx` (`produtos_idprodutos`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `quantidade` decimal(10,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `produtos_has_vendas`
+--
+
+INSERT INTO `produtos_has_vendas` (`iditem`, `produtos_idprodutos`, `vendas_idvendas`, `quantidade`) VALUES
+(1, 1, 3, '1'),
+(2, 1, 4, '2');
 
 -- --------------------------------------------------------
 
@@ -169,41 +137,18 @@ CREATE TABLE IF NOT EXISTS `produtos_has_vendas` (
 -- Estrutura da tabela `regiao`
 --
 
-CREATE TABLE IF NOT EXISTS `regiao` (
-  `idregiao` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
-  PRIMARY KEY (`idregiao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+CREATE TABLE `regiao` (
+  `idregiao` int(11) NOT NULL,
+  `nome` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `regiao`
 --
 
 INSERT INTO `regiao` (`idregiao`, `nome`) VALUES
-(1, 'Duque de Caxias'),
-(2, 'São João'),
-(3, 'Niterói'),
-(4, 'Petrópolis'),
-(5, 'Magé'),
-(6, 'Belford Roxo'),
-(7, 'Rio de Janeiro'),
-(8, 'Copacabana');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `servico`
---
-
-CREATE TABLE IF NOT EXISTS `servico` (
-  `idservico` int(11) NOT NULL AUTO_INCREMENT,
-  `tipo` varchar(45) DEFAULT NULL,
-  `valor` varchar(45) DEFAULT NULL,
-  `regiao` varchar(45) DEFAULT NULL COMMENT 'Região de atendimento',
-  `funcionario_idfuncionario` int(11) NOT NULL,
-  PRIMARY KEY (`idservico`),
-  KEY `fk_servico_funcionario1_idx` (`funcionario_idfuncionario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+(1, 'Rio de Janeiro'),
+(2, 'Duque de Caxias');
 
 -- --------------------------------------------------------
 
@@ -211,20 +156,116 @@ CREATE TABLE IF NOT EXISTS `servico` (
 -- Estrutura da tabela `vendas`
 --
 
-CREATE TABLE IF NOT EXISTS `vendas` (
-  `idvendas` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `vendas` (
+  `idvendas` int(11) NOT NULL,
   `cliente_idcliente` int(11) NOT NULL,
-  `data_venda` date NOT NULL COMMENT 'Data da Venda',
-  PRIMARY KEY (`idvendas`),
-  KEY `fk_vendas_cliente1_idx` (`cliente_idcliente`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `data_venda` date NOT NULL COMMENT 'Data da Venda'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `vendas`
 --
 
 INSERT INTO `vendas` (`idvendas`, `cliente_idcliente`, `data_venda`) VALUES
-(1, 1, '2018-02-27');
+(3, 1, '2018-02-10'),
+(4, 1, '2018-02-11');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cliente`
+--
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`idcliente`);
+
+--
+-- Indexes for table `funcionario`
+--
+ALTER TABLE `funcionario`
+  ADD PRIMARY KEY (`idfuncionario`),
+  ADD KEY `fk_funcionario_regiao1_idx` (`regiao_idregiao`);
+
+--
+-- Indexes for table `marca`
+--
+ALTER TABLE `marca`
+  ADD PRIMARY KEY (`idmarca`);
+
+--
+-- Indexes for table `produtos`
+--
+ALTER TABLE `produtos`
+  ADD PRIMARY KEY (`idprodutos`),
+  ADD KEY `fk_produtos_marca_idx` (`marca_idmarca`);
+
+--
+-- Indexes for table `produtos_has_vendas`
+--
+ALTER TABLE `produtos_has_vendas`
+  ADD PRIMARY KEY (`iditem`,`produtos_idprodutos`,`vendas_idvendas`),
+  ADD KEY `fk_produtos_has_vendas_vendas1_idx` (`vendas_idvendas`),
+  ADD KEY `fk_produtos_has_vendas_produtos1_idx` (`produtos_idprodutos`);
+
+--
+-- Indexes for table `regiao`
+--
+ALTER TABLE `regiao`
+  ADD PRIMARY KEY (`idregiao`);
+
+--
+-- Indexes for table `vendas`
+--
+ALTER TABLE `vendas`
+  ADD PRIMARY KEY (`idvendas`),
+  ADD KEY `fk_vendas_cliente1_idx` (`cliente_idcliente`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cliente`
+--
+ALTER TABLE `cliente`
+  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `funcionario`
+--
+ALTER TABLE `funcionario`
+  MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `marca`
+--
+ALTER TABLE `marca`
+  MODIFY `idmarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `produtos`
+--
+ALTER TABLE `produtos`
+  MODIFY `idprodutos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `produtos_has_vendas`
+--
+ALTER TABLE `produtos_has_vendas`
+  MODIFY `iditem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `regiao`
+--
+ALTER TABLE `regiao`
+  MODIFY `idregiao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `vendas`
+--
+ALTER TABLE `vendas`
+  MODIFY `idvendas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -235,20 +276,6 @@ INSERT INTO `vendas` (`idvendas`, `cliente_idcliente`, `data_venda`) VALUES
 --
 ALTER TABLE `funcionario`
   ADD CONSTRAINT `fk_funcionario_regiao1` FOREIGN KEY (`regiao_idregiao`) REFERENCES `regiao` (`idregiao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `item_ordem`
---
-ALTER TABLE `item_ordem`
-  ADD CONSTRAINT `fk_item_ordem_ordem_servico1` FOREIGN KEY (`ordem_servico_idordem_servico`) REFERENCES `ordem_servico` (`idordem_servico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_item_ordem_servico1` FOREIGN KEY (`servico_idservico`) REFERENCES `servico` (`idservico`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `ordem_servico`
---
-ALTER TABLE `ordem_servico`
-  ADD CONSTRAINT `fk_ordem_servico_cliente1` FOREIGN KEY (`cliente_idcliente`) REFERENCES `cliente` (`idcliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_ordem_servico_funcionario1` FOREIGN KEY (`funcionario_idfuncionario`) REFERENCES `funcionario` (`idfuncionario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `produtos`
@@ -264,16 +291,11 @@ ALTER TABLE `produtos_has_vendas`
   ADD CONSTRAINT `fk_produtos_has_vendas_vendas1` FOREIGN KEY (`vendas_idvendas`) REFERENCES `vendas` (`idvendas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `servico`
---
-ALTER TABLE `servico`
-  ADD CONSTRAINT `fk_servico_funcionario1` FOREIGN KEY (`funcionario_idfuncionario`) REFERENCES `funcionario` (`idfuncionario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Limitadores para a tabela `vendas`
 --
 ALTER TABLE `vendas`
   ADD CONSTRAINT `fk_vendas_cliente1` FOREIGN KEY (`cliente_idcliente`) REFERENCES `cliente` (`idcliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
