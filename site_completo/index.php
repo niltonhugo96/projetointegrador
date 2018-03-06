@@ -6,6 +6,8 @@
 
 <link type="text/css" rel="stylesheet" href ="style2.css">
 
+<link type="text/css" rel="stylesheet" href ="css/style.css">
+
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-lBO0+E/aIJhpRIYjP6dJ1mNYgo3hhUBPcF74XRfOM27g7WmDuitolvnUENdDG4QI" crossorigin="anonymous">
 
 
@@ -19,9 +21,9 @@
 
 <body>
 
-
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-	  <a class="navbar-brand" href="index.php">Loja</a>
+		<img class="formiga" src="http://www.jogosdesoletrar.com/data/images/formiga-rainha,-a-formiga-com-uma-vida-mais-longa_51965f0a8b9a5-thumb.jpg">
+	
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -48,7 +50,7 @@
 	        <a class="nav-link" href="regiao/regiao.php">Região de funcionário</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="item_venda/item_venda.php">item_venda</a>
+	        <a class="nav-link" href="item_venda/item_venda.php">Item Venda</a>
 	      </li>
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0">
