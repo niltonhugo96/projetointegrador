@@ -1,0 +1,26 @@
+
+.a h1{
+	text-align: center;
+	color:#5CACEE;
+	font-family: 'Oleo Script', cursive;
+
+}
+
+.b form{
+	text-align: center;
+}
+
+.times{
+	float: left;
+	width: 350px;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 5px;
+	background-color:white;
+}
+
+.times img{
+	width: 80px;
+	text-align: center;	
+	
+}
