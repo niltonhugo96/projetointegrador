@@ -15,6 +15,7 @@ include_once 'crud3.php';
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <link rel="stylesheet" href="vendas1.css">
    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-lBO0+E/aIJhpRIYjP6dJ1mNYgo3hhUBPcF74XRfOM27g7WmDuitolvnUENdDG4QI" crossorigin="anonymous">
     
 
 <!--Fontes do Google -->
@@ -23,7 +24,48 @@ include_once 'crud3.php';
 
 
     
-    
+<body>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="../index.php">Loja</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../cliente/cliente.php">Cliente</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../produtos/produtos.php">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../vendas/vendas.php">Vendas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../funcionarios/cad_funciona.php">Funcionários</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../marca/marca.php">Marca</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../regiao/regiao.php">Região de funcionário</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../item_venda/item_venda.php">item_venda</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
 <br/>
 <div id="form" class="texto">
 <form method="post">  

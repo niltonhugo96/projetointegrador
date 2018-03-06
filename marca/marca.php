@@ -85,7 +85,7 @@ while($row=$res->fetch_array())
     
     <center><label><?php echo $row['idmarca']; ?></label><br/><br/></center>
     <center><label><?php echo $row['nome']; ?></label><br/><br/></center>
-    <center><img src=<?php echo $row['site']; ?>><br/><br></center>
+    <center><label><?php echo $row['site']; ?>></label><br/><br></center>
     
 	
 

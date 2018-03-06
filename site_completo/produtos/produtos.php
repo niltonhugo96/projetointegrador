@@ -18,8 +18,8 @@ include_once 'crud3.php';
     
     <link rel="stylesheet" href="styletimes3.css">
    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-xpQNcoacYF/4TKVs2uD3sXyaQYs49wxwEmeFNkOUgun6SLWdEbaCOv8hGaB9jLxt" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-lBO0+E/aIJhpRIYjP6dJ1mNYgo3hhUBPcF74XRfOM27g7WmDuitolvnUENdDG4QI" crossorigin="anonymous">
+    
 
     <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
     
@@ -30,40 +30,43 @@ include_once 'crud3.php';
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Projeto Integrador</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation" style="">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="../index.php">Loja</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link active" href="produtos.php">Produtos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar">
-      <button class="btn btn-primary" type="submit">Buscar</button>
-      <button class="btn btn-info" type="submit" href="">Login</button>
-    </form>
-  </div>
-</nav>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../cliente/cliente.php">Cliente</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../produtos/produtos.php">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../vendas/vendas.php">Vendas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../funcionarios/cad_funciona.php">Funcionários</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../marca/marca.php">Marca</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../regiao/regiao.php">Região de funcionário</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../item_venda/item_venda.php">item_venda</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
 
 <br>
 <br>
@@ -165,9 +168,7 @@ while($row=$res->fetch_array())
 <br>
 <br>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark container rodap">
-  <h4>Desenvolvido por Jônatas Silva</h4>
-</nav>
+
 
 </div>
 </body>
