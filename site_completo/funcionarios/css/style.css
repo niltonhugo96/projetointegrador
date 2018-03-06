@@ -1,22 +1,20 @@
 
 
+.a h1{
+	text-align: center;
+	color:#5CACEE;
+	font-family: 'Oleo Script', cursive;
 
-
-.nav-item{
-	font-size: 1.5em;
 }
 
+
 #update {
-	margin-left: 9%;
+	margin-left: 12%;
 	
 	width: 900px;
 	height: 500px;
 }
 
-#titulo1 {
-	margin-left: 9%;
-}
-
-#myCarousel {
-	margin-top: 10%;
+#cadastro {
+	text-align: center;
 }

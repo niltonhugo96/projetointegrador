@@ -8,9 +8,9 @@ include_once 'crud_cad_funciona.php';
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Cadastro de Funcionários</title>
-		<link type="text/css" rel="stylesheet" href ="style2.css">
+		<link type="text/css" rel="stylesheet" href ="css/style.css">
 
-		<link type="text/css" rel="stylesheet" href ="../css/formiga.css">
+		<link type="text/css" rel="stylesheet" href ="../css/style.css">
 		
 
 		<link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-lBO0+E/aIJhpRIYjP6dJ1mNYgo3hhUBPcF74XRfOM27g7WmDuitolvnUENdDG4QI" crossorigin="anonymous">
@@ -19,7 +19,8 @@ include_once 'crud_cad_funciona.php';
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			 <img class="formiga" src="http://www.jogosdesoletrar.com/data/images/formiga-rainha,-a-formiga-com-uma-vida-mais-longa_51965f0a8b9a5-thumb.jpg">
+			 
+			 <a href="../index.php"><img class="formiga" src="http://www.jogosdesoletrar.com/data/images/formiga-rainha,-a-formiga-com-uma-vida-mais-longa_51965f0a8b9a5-thumb.jpg"></a>
 	  
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
@@ -61,9 +62,10 @@ include_once 'crud_cad_funciona.php';
 			<br/>
 		
 		<form name="form1" class="form-horizontal" method="post" />
-		
-			<legend>Cadastro de Funcionários:</legend>
-
+			<div class="a">
+			<h1>Cadastro de Funcionários:</h1>
+			<br/>
+			</div>
 					<div class="form-gruop">
 					
 					<label for="nome" class="col-md-1">Nome:</label>
@@ -87,7 +89,7 @@ include_once 'crud_cad_funciona.php';
 
 					
 					<label for="regiao_idregiao" class="col-md-1">Região:</label>
-					<select name="regiao_idregiao" class="col-md-3" >
+					<select name="regiao_idregiao" class="col-md-2" >
 					<option>Selecione a regiao </option>	
 					<?php
 						$res = $MySQLiconn->query("SELECT * FROM regiao ");
@@ -118,13 +120,13 @@ include_once 'crud_cad_funciona.php';
 						if(isset($_GET['edit']))
 						{
 							?>
-							<input type="submit" class="btn btn-default col-md-2" name="update" value="Atualizar"/>
+							<input type="submit" class="btn btn-primary col-md-2" name="update" value="Atualizar"/>
 							<?php
 						}
 						else
 						{
 							?>
-							<input type="submit" class="btn btn-default col-md-2" name="save" value="Salvar"/>
+							<input type="submit" class="btn btn-primary col-md-2" name="save" value="Salvar"/>
 							<?php
 						}
 					?>
