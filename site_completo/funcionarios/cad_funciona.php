@@ -68,28 +68,28 @@ include_once 'crud_cad_funciona.php';
 			</div>
 					<div class="form-gruop">
 					
-					<label for="nome" class="col-md-1">Nome:</label>
-					<input type="text" class="col-md-2" name="nome" value="<?php if(isset($_GET['edit'])) echo $getROW['nome'];  ?>" /></br>
+					<label>
+					<input type="text" class="form-control" placeholder="Nome" name="nome" value="<?php if(isset($_GET['edit'])) echo $getROW['nome'];  ?>" /></label></br>
 					</div>
 
 					<div class="form-gruop">
 					
-					<label for="senha" class="col-md-1">Senha:</label>
-					<input type="password" class="col-md-2" name="senha" value="<?php if(isset($_GET['edit'])) echo $getROW['senha'];  ?>" /></br>
+					<label>
+					<input type="password" class="form-control" placeholder="Senha" name="senha" value="<?php if(isset($_GET['edit'])) echo $getROW['senha'];  ?>" /></label></br>
 					</div>
 
 					<div class="form-gruop">
 					
-					<label for="cpf" class="col-md-1">C.P.F:</label>
-					<input type="text" class="col-md-2" name="cpf" value="<?php if(isset($_GET['edit'])) echo $getROW['cpf'];  ?>" /></br>
+					<label>
+					<input type="text" class="form-control" placeholder="C.P.F" name="cpf" value="<?php if(isset($_GET['edit'])) echo $getROW['cpf'];  ?>" /></label></br>
 					</div> 
 
 					<div class="form-gruop">
 					
 
 					
-					<label for="regiao_idregiao" class="col-md-1">Região:</label>
-					<select name="regiao_idregiao" class="col-md-2" >
+					<label>
+					<select name="regiao_idregiao" class="form-control">
 					<option>Selecione a regiao </option>	
 					<?php
 						$res = $MySQLiconn->query("SELECT * FROM regiao ");
@@ -106,7 +106,7 @@ include_once 'crud_cad_funciona.php';
 						}
 					?>
 
-					</select>
+					</select></label>
 
 					
 					
