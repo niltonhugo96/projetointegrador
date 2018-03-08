@@ -33,7 +33,7 @@ include_once 'crud3.php';
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-   <img class="formiga" src="http://www.jogosdesoletrar.com/data/images/formiga-rainha,-a-formiga-com-uma-vida-mais-longa_51965f0a8b9a5-thumb.jpg">
+   <a href="../index.php"><img class="formiga" src="http://www.jogosdesoletrar.com/data/images/formiga-rainha,-a-formiga-com-uma-vida-mais-longa_51965f0a8b9a5-thumb.jpg">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,10 +57,10 @@ include_once 'crud3.php';
           <a class="nav-link" href="../marca/marca.php">Marca</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../regiao/regiao.php">Região de funcionário</a>
+          <a class="nav-link" href="../regiao/regiao.php">Região do Funcionário</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../item_venda/item_venda.php">item_venda</a>
+          <a class="nav-link" href="../item_venda/item_venda.php">Item_Venda</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">

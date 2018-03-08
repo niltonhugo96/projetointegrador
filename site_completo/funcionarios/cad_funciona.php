@@ -45,10 +45,10 @@ include_once 'crud_cad_funciona.php';
 	        <a class="nav-link" href="../marca/marca.php">Marca</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="../regiao/regiao.php">Região de funcionário</a>
+	        <a class="nav-link" href="../regiao/regiao.php">Região do Funcionário</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="../item_venda/item_venda.php">item_venda</a>
+	        <a class="nav-link" href="../item_venda/item_venda.php">Item_Venda</a>
 	      </li>
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0">
