@@ -8,7 +8,7 @@ if(isset($_POST['save']))
 {
 
     $nome = $MySQLiconn->real_escape_string($_POST['nome']);
-    $senha = $MySQLiconn->real_escape_string($_POST['senha']);
+    $senha = $MySQLiconn->real_escape_string(md5($_POST['senha']));
     $cpf = $MySQLiconn->real_escape_string($_POST['cpf']);
     $regiao_idregiao = $MySQLiconn->real_escape_string($_POST['regiao_idregiao']);
 	
@@ -37,7 +37,7 @@ if(isset($_GET['edit']))
 if(isset($_POST['update']))
 {
 	$SQL = $MySQLiconn->query("UPDATE funcionario SET	nome='".$_POST['nome']."'
-												,senha='".$_POST['senha']."'
+												,senha='".md5($_POST['senha'])."'
 												,cpf='".$_POST['cpf']."'
 												,regiao_idregiao='".$_POST['regiao_idregiao']."'
 												WHERE idfuncionario=".$_GET['edit']);

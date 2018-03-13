@@ -9,7 +9,7 @@ if(isset($_POST['save']))
      $nome = $MySQLiconn->real_escape_string($_POST['nome']);
 	 $telefone = $MySQLiconn->real_escape_string($_POST['telefone']);
 	 $email = $MySQLiconn->real_escape_string($_POST['email']);
-	 $senha = $MySQLiconn->real_escape_string($_POST['senha']);
+	 $senha = $MySQLiconn->real_escape_string(md5($_POST['senha']));
 	 $cep = $MySQLiconn->real_escape_string($_POST['cep']);
 	 $endereco = $MySQLiconn->real_escape_string($_POST['endereco']);
 	 $complemento = $MySQLiconn->real_escape_string($_POST['complemento']);
@@ -52,7 +52,7 @@ if(isset($_POST['update']))
 												,telefone='".$_POST['telefone']."'
 												,email='".$_POST['telefone']."'
 												,email='".$_POST['email']."'
-												,senha='".$_POST['senha']."'
+												,senha='".md5($_POST['senha'])."'
 												,cep='".$_POST['cep']."'
 												,endereco='".$_POST['endereco']."'
 												,complemento='".$_POST['complemento']."'

@@ -8,7 +8,7 @@ include_once 'crud_cad_funciona.php';
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Cadastro de Funcionários</title>
-		<link type="text/css" rel="stylesheet" href ="css/style.css">
+		<link type="text/css" rel="stylesheet" href ="../css/stylefun.css">
 
 		<link type="text/css" rel="stylesheet" href ="../css/style.css">
 		
@@ -51,10 +51,10 @@ include_once 'crud_cad_funciona.php';
 	        <a class="nav-link" href="../item_venda/item_venda.php">Item_Venda</a>
 	      </li>
 	    </ul>
-	    <form class="form-inline my-2 my-lg-0">
-	      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-	      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-	    </form>
+	    <form class="form-inline my-2 my-lg-0" action="../busca.php" method="post">
+        <input name="buscar" class="form-control mr-sm-2" type="text" placeholder="Buscar">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
 	  </div>
 	</nav>
 
@@ -174,9 +174,9 @@ include_once 'crud_cad_funciona.php';
 		</div>
 		</div>
 
-<script src="js/jquery-3.2.1.min.js"></script> 
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/jquery-3.2.1.min.js"></script> 
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 
 
 	</body>

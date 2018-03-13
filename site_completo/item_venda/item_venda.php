@@ -27,7 +27,7 @@ include_once 'crud3.php';
   <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-   <a href="../index.php"><img class="formiga" src="http://www.jogosdesoletrar.com/data/images/formiga-rainha,-a-formiga-com-uma-vida-mais-longa_51965f0a8b9a5-thumb.jpg">
+   <a href="../index.php"><img class="formiga" src="http://www.jogosdesoletrar.com/data/images/formiga-rainha,-a-formiga-com-uma-vida-mais-longa_51965f0a8b9a5-thumb.jpg"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,9 +57,9 @@ include_once 'crud3.php';
           <a class="nav-link" href="../item_venda/item_venda.php">Item_Venda</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      <form class="form-inline my-2 my-lg-0" action="../busca.php" method="post">
+        <input name="buscar" class="form-control mr-sm-2" type="text" placeholder="Buscar">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
       </form>
     </div>
   </nav>  
@@ -184,5 +184,8 @@ while($row=$res->fetch_array())
 
 
 </div>
+<script src="../js/jquery-3.2.1.min.js"></script> 
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
