@@ -38,7 +38,7 @@ include_once 'crud_cad_funciona.php';
 	      <li class="nav-item">
 	        <a class="nav-link" href="../vendas/vendas.php">Vendas</a>
 	      </li>
-	      <li class="nav-item">
+	      <li class="nav-item active">
 	        <a class="nav-link" href="../funcionarios/cad_funciona.php">Funcionários</a>
 	      </li>
 	      <li class="nav-item">

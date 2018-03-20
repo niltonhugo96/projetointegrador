@@ -32,7 +32,7 @@ include_once 'crud2.php';
 	  <div class="collapse navbar-collapse" id="navbarColor01">
 	    <ul class="navbar-nav mr-auto">
 	      
-	      <li class="nav-item">
+	      <li class="nav-item active">
 	        <a class="nav-link" href="../cliente/cliente.php">Cliente</a>
 	      </li>
 	      <li class="nav-item">

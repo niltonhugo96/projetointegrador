@@ -53,7 +53,7 @@ include_once 'crud3.php';
         <li class="nav-item">
           <a class="nav-link" href="../regiao/regiao.php">Região do Funcionário</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="../item_venda/item_venda.php">Item_Venda</a>
         </li>
       </ul>

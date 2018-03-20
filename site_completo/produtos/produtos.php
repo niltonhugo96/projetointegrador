@@ -44,7 +44,7 @@ include_once 'crud3.php';
         <li class="nav-item">
           <a class="nav-link" href="../cliente/cliente.php">Cliente</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="../produtos/produtos.php">Produtos</a>
         </li>
         <li class="nav-item">
